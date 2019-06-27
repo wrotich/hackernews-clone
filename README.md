@@ -1,24 +1,25 @@
-# README
+# Hackernews Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+- This project is a simple clone for hackernews backend built using GraphQL and Ruby on Rails.
 
 * Ruby version
 
-* System dependencies
+  `2.6.0`
 
 * Configuration
 
-* Database creation
+  *Run the following commands:*
 
-* Database initialization
+      git clone https://github.com/wrotich/hackernews-clone.git
 
-* How to run the test suite
+      bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+      rails s
 
-* Deployment instructions
+      Visit localhost:3000/graphiql
 
-* ...
+* Sample Queries that can be made includes:
+
+      I. Listing all Links
+
+      II. Creating Links

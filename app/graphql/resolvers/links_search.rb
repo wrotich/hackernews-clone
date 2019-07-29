@@ -17,6 +17,8 @@ class Resolvers::LinksSearch
 
   # when "filter" is passed "apply_filter" would be called to narrow scope
   option :filter, type: LinkFilter, with: :apply_filter
+  option :first, type: types.Int, with: :apply_first
+  option :skip, type: types.Int, with: :apply_skip
 
   # apply_filter recursively loops through "OR" branches
   def apply_filter(scope, value)
@@ -24,6 +26,14 @@ class Resolvers::LinksSearch
     scope.merge branches
   end
 
+  def apply_first(scope, value)
+    scope.limit(value)
+  end
+
+  def apply_skip(scope, value)
+    scope.offset(value)
+  end
+  
   def normalize_filters(value, branches = [])
     scope = Link.all
     scope = scope.where('description LIKE ?', "%#{value[:description_contains]}%") if value[:description_contains]

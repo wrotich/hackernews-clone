@@ -36,6 +36,9 @@ gem 'graphql', '~> 1.8.13'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
